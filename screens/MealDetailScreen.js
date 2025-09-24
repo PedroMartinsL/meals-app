@@ -3,7 +3,6 @@ import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
 import Subtitle from "../components/MealDetail/Subtitle";
-import { Button } from "react-native-web";
 
 function MealDetailScreen({ route, navigation }) {
   const mealId = route.params.mealId;
@@ -15,7 +14,7 @@ function MealDetailScreen({ route, navigation }) {
   useLayoutEffect(() => {
     navigation.setOptions({
         headerRight: () => {
-            return <Button title="Tap me" onPress={headerButtonPressHandler}/>
+            return <IconButton icon="star" color="white" onPress={headerButtonPressHandler} />
         }
     });
   }, [navigation, headerButtonPressHandler]);
